@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -54,7 +54,15 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1.27 cm, % seperation between body and page edge from the top
+    bottom=1.27 cm, % seperation between body and page edge from the bottom
+    left=1.27 cm, % seperation between body and page edge from the left
+    right=1.27 cm, % seperation between body and page edge from the right
+    footskip=0.5 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
 
 %tabularx environment
 \usepackage{tabularx}
@@ -79,7 +87,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{3pt}{3pt}
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -96,6 +104,16 @@
 
 %debug page outer frames
 %\usepackage{showframe}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.02 cm,
+        parsep=0.02 cm,
+        partopsep=0.02 cm
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
 
 
 % job listing environments
@@ -142,97 +160,128 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Raphaelle Abby U. Montayre} \\[7.5pt]
-\href{https://github.com/abbymontayre}{\raisebox{-0.03\height}\faGithub\ abbymontayre} \ $|$ \ 
-\href{https://linkedin.com/in/raphaelleabby-montayre}{\raisebox{-0.03\height}\faLinkedin\ raphaelleabby-montayre} \ $|$ \ 
-% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:raphaelleabby.montayre@gmail.com}{\raisebox{-0.35\height}\faEnvelope \ raphaelleabb.montyare@gmail.com} \ $|$ \  
-\href{tel:+639171342328}{\raisebox{-0.03\height}\faMobile \ +63.917.134.2328} \\
+\textbf{\fontsize{18 pt}{18 pt}\selectfont Raphaelle Abby U. Montayre} \\
+\vspace{0.05 cm}
+\href{https://github.com/abbymontayre}{\color{black}\raisebox{-0.05\height}\faGithub\ abbymontayre}\ \ $|$ \ 
+\href{https://linkedin.com/in/raphaelleabby-montayre}{\color{black}\raisebox{-0.05\height}\faLinkedin\ raphaelleabby-montayre} \ $|$ \ 
+% \href{https://alexi.life}{\color{black}\raisebox{-0.05\height}\faGlobe\ alexi.life} \ $|$ \ 
+\href{mailto:raphaelleabby.montayre@gmail.com}{\color{black}\raisebox{-0.05\height}\faEnvelope\ raphaelleabby.montayre@gmail.com} \ $|$ \ 
+\href{tel:+639171342328}{\color{black}\raisebox{-0.05\height}\faMobile\ 0917 134 2328} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+%	EXPERIENCE
 %----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-\section{Summary}
-UI/UX Designer and Computer Science student at Ateneo de Manila University with a specialization in Figma-based prototyping and interface design. Experienced in translating design systems into production-ready frontends using React.js and Tailwind CSS. Brings an additional eye for visual storytelling through photography and online interactive article work, having covered live theater productions and contributed to digital journalistic media. Proven under pressure with 2nd Place and Top 5 finalist finishes across three hackathons.
-
-%Experience
-\section{Organization Experience}
-
-\begin{joblong}{UI Designer (Product/Engineering), SipN'Scale}{2026 - Present}
-    \item Design and prototype website flows for product and engineering teams using Figma.
-\end{joblong}
-
-\begin{joblong}{Digital Development Member, The GUIDON}{2024 - Present}
-\item Build interactive web articles using React.js and Tailwind CSS.
-\item Create visual design assets and layouts in Figma.
-\end{joblong}
-
-\begin{joblong}{Web Designer \& Developer, TEDxAteneoDeManilaU}{202 - Present}
-\item Create design systems and webflows in Figma.
-\item Develop website components using React and Tailwind CSS.
-\end{joblong}
-
-\begin{joblong}{Documentations Member, Ateneo Blue Repertory}{2025 - Present}
-\item Photograph theater productions from rehearsals to final show dates.
-\item Covered productions including \textit{The Guy Who Didn't Like Musicals} and \textit{Addams Family}.
-\end{joblong}
-
-%Projects
-
-\section{Projects}
-
+\section{Experience}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Salbar - qtr.zip} & \hfill \href{https://web.facebook.com/share/p/1bkK4XXvbm/}{MyNaga First Mayoral Hackathon (Top 5 Health Track Finalist)} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Built an emergency offline triage system for disaster scenarios; led product design and interface work in Figma.}  \\
+\textbf{UX/UI Designer} & \hfill Jan 2026 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{SipN'Scale}
+    \begin{highlights}
+        \item Design end-to-end website flows and interactive prototypes in Figma, translating product requirements into clear, navigable user experiences.
+        \item Collaborate with the Branding team to ensure all interface designs are consistent with the established brand identity's typography, color systems, and visual tone.
+    \end{highlights}
+}
 \end{tabularx}
-
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Schrollar - admulto} & \hfill \href{https://web.facebook.com/share/p/1E81vN3s7Q/}{Hackfest 2026: Axis (2nd Runner-Up)} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Designed a research discovery platform that helps students find and narrow paper topics through a familiar feed-style browsing experience and easier content engagement.}  \\
+\textbf{Digital Development Staffer} & \hfill Aug 2024 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{The GUIDON}
+    \begin{highlights}
+        \item Design user interfaces for interactive articles and prototype end-to-end user flows in Figma before handoff to development.
+        \item Develop and implement Figma designs into production-ready components using React.js and Tailwind CSS.
+        \item Pitch and conceptualize editorial stories with the potential to be adapted into interactive and data-driven media formats.
+    \end{highlights}
+}
 \end{tabularx}
-
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Web Designer and Developer} & \hfill Jul 2025 – Present \\ [1pt]
+% \multicolumn{2}{@{}X@{}}{
+%     \textit{TEDxAteneoDeManilaU}
+%     \begin{highlights}
+%         \item Led 4-part web development workshop series for 20+ student developers, upskilling them in modern technologies like Next.js to enable organization to tackle more complex projects
+%         \item Developed internal event registration system to automate check-in process, reducing check-in time by 75\% and now used for all MISA events
+%         \item Led external client projects providing real-world development experience for organization members
+%     \end{highlights}
+%     }
+% \end{tabularx}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Hakot - qtr.zip} & \hfill Shipped or Be Shipped 2025 (2nd Place) \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Developed a shared-load dispatch workflow connecting farmers and truck drivers, aimed to optimize multi-stop delivery routes with travel-time and fuel estimates, and integrated MMDA truck-ban scheduling to better match perishability with dispatch windows.}  \\
+\textbf{Documentations Member} & \hfill Sep 2025 – Present \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Ateneo Blue Repertory}
+    \begin{highlights}
+        \item Photograph rehearsals and final show dates across productions, including \textit{The Guy Who Didn't Like Musicals} and the ongoing \textit{The Addams Family}.
+        \item Post-process production photography in Adobe Lightroom for use as publication assets and marketing collateral.
+        \item Conceptualize and direct cast shoots and video teasers, briefing cast members on concept, blocking, and visual direction, to produce marketing materials for productions.
+    \end{highlights}
+    }
 \end{tabularx}
-
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-% 2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2024 - 2028 & Bachelor's of Science in Computer Science Degree at \textbf{Ateneo de Manila University} \\ 
-
-2021 - 2024 & Sacred Heart School-Ateneo de Cebu (STEM Track) \hfill  (Academic Merit Award - Silver) \\
-
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Ateneo de Manila University} & \hfill Expected May 2028 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    Bachelor's of Science in Computer Science
+    \begin{highlights}
+        \item Design Thinking in Public Health, Software Frameworks and Development Tools, Introduction to Statistical Analysis, Introduction to Programming, Data Structures and Algorithms,  Math for Computer Science, Electronics.
+    \end{highlights}
+}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	PUBLICATIONS
+%	PROJECTS
 %----------------------------------------------------------------------------------------
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
-
+\section{Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Schrollar} & \hfill Mar 2026 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{2nd Runner Up in Hackfest2026:AXIS}
+    \begin{highlights}
+        \item Conceptualized and shot the video pitch for the research discovery platform that helps students find and narrow paper topics through a familiar feed-style browsing experience and easier content engagement.
+    \end{highlights}
+}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{TEDxAteneoDeManilaU Website} & \hfill Mar 2026 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+\textit{Volunteer Project}
+    \begin{highlights}
+        \item Worked in a team of 5 and was designated to implement key website components. 
+        \item Planned and designed key wire-frames on website pages, merchandise, registration, etc., all collated and prototyped using Figma. 
+    \end{highlights}
+}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Salbar} & \hfill Feb 2026 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{Top 5 Health Track Finalist in MyNaga Mayoral Hackathon}
+    \begin{highlights}
+        \item Designed an emergency offline triage system for disaster scenarios
+        \item Led user interface and userflow in Figma.
+    \end{highlights}
+}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Hakot} & \hfill Nov 2025 \\ [1pt]
+\multicolumn{2}{@{}X@{}}{
+    \textit{2nd Place in Shipped or Be Shipped 2025}
+    \begin{highlights}
+        \item Built automated QPI computation tool with program-based course autofill, generating 9,600+ sessions and 131,000+ interactions, ranking number 2 on Google for "QPI calculator"
+    \end{highlights}
+}
+\end{tabularx}
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-UI/UX Design (Figma) (specialization) & \normalsize{Adobe Illustrator $\cdot$ Adobe Photoshop $\cdot$ Adobe Lightroom $\cdot$ Photography}\\
-Frontend Development & \normalsize{React.js $\cdot$ TypeScript $\cdot$ Tailwind CSS $\cdot$ HTML5 / CSS / JavaScript}\\
-Backend \& Programming & \normalsize{Python $\cdot$ Django $\cdot$ Java}\\
-Productivity & \normalsize{Google Workspace $\cdot$ Microsoft Office}\\
+Design: &  \normalsize{Figma, Adobe Illustrator, Adobe Photoshop, Adobe Lightroom, Photography}\\
+Languages and Frameworks: &  \normalsize{JavaScript, TypeScript, Python, HTML, CSS}\\
+Libraries and Tools: &  \normalsize{React, TailwindCSS, Git, Django}\\
+Productivity: &  \normalsize{Google Workspace, Microsoft Office}\\
 \end{tabularx}
-
-\vfill
-\center{\footnotesize Last updated: \today}
 
 \end{document}
